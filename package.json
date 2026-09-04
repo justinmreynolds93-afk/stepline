@@ -1,0 +1,51 @@
+{
+  "name": "stepline",
+  "version": "0.1.0",
+  "description": "Durable, Postgres-backed step-graph workflows for Node. Crash a worker mid-step; it resumes, not restarts.",
+  "type": "module",
+  "bin": {
+    "stepline": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "migrations"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "tsc -p tsconfig.json --noEmit",
+    "pretest": "tsx test/reset-db.ts",
+    "test": "node --import tsx --test test/**/*.test.ts",
+    "test:db:up": "docker compose -f test/docker-compose.yml up -d --wait",
+    "test:db:down": "docker compose -f test/docker-compose.yml down -v",
+    "example": "node --import tsx examples/run.ts"
+  },
+  "keywords": [
+    "workflow",
+    "durable-execution",
+    "postgres",
+    "job-queue",
+    "orchestration",
+    "saga",
+    "temporal-alternative"
+  ],
+  "license": "MIT",
+  "author": "Justin Reynolds",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/justinmreynolds93-afk/stepline.git"
+  },
+  "dependencies": {
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
