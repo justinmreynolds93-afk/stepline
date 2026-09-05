@@ -1,6 +1,6 @@
 {
   "name": "stepline",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Durable, Postgres-backed step-graph workflows for Node. Crash a worker mid-step; it resumes, not restarts.",
   "type": "module",
   "bin": {
@@ -17,6 +17,7 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "prepare": "tsc -p tsconfig.json",
     "lint": "tsc -p tsconfig.json --noEmit",
     "pretest": "tsx test/reset-db.ts",
     "test": "node --import tsx --test test/**/*.test.ts",
