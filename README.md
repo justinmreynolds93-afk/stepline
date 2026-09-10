@@ -96,8 +96,10 @@ a debugging session (`stepline history <id>`).
 
 ## Install
 
+Not on npm yet — install straight from the tagged release:
+
 ```bash
-npm install stepline pg
+npm install github:justinmreynolds93-afk/stepline#v0.1.1 pg
 npx stepline migrate   # or call migrate(pool) yourself at startup
 ```
 
